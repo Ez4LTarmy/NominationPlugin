@@ -11,7 +11,7 @@ public class TestCommandHandler : ICommandHandler
 
     public TestCommandHandler(
         ILogger<TestCommandHandler> logger,
-        PluginContext pluginContext)
+        IPluginContext pluginContext)
     {
         _logger = logger;
         _plugin = (BasePlugin)pluginContext.Plugin;
