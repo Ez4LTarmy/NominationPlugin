@@ -7,6 +7,7 @@ public class ServicesDependencyInjection : IPluginServiceCollection<NominationPl
 {
     public void ConfigureServices(IServiceCollection serviceCollection)
     {
+        serviceCollection.AddSingleton<BasePlugin>();
         serviceCollection.AddCommandHandlers();
     }
 }
