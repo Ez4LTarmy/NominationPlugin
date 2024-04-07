@@ -1,6 +1,7 @@
 ﻿namespace NominationPlugin.Handlers;
 
 using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Core.Plugin;
 using Microsoft.Extensions.Logging;
 
 public class TestCommandHandler : ICommandHandler
@@ -10,10 +11,10 @@ public class TestCommandHandler : ICommandHandler
 
     public TestCommandHandler(
         ILogger<TestCommandHandler> logger,
-        BasePlugin plugin)
+        PluginContext pluginContext)
     {
         _logger = logger;
-        _plugin = plugin;
+        _plugin = (BasePlugin)pluginContext.Plugin;
 
         _logger.LogInformation("Log from ctor");
     }
