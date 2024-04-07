@@ -21,8 +21,7 @@ public static class ServiceCollectionExtensions
         {
             services.AddSingleton(type);
 
-            var commandHandlerInstance = Activator.CreateInstance(type);
-            if (commandHandlerInstance is ICommandHandler commandHandler)
+            if (type is ICommandHandler commandHandler)
             {
                 commandHandler.Register();
             }
