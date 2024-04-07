@@ -20,6 +20,12 @@ public static class ServiceCollectionExtensions
         foreach (var type in types)
         {
             services.AddSingleton(type);
+
+            var commandHandlerInstance = Activator.CreateInstance(type);
+            if (commandHandlerInstance is ICommandHandler commandHandler)
+            {
+                commandHandler.Register();
+            }
         }
     }
 
