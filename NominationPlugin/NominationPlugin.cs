@@ -16,6 +16,11 @@ public class NominationPlugin : BasePlugin
     public override void Load(bool hotReload)
     {
         Logger.LogInformation("Plugin was loaded successfully");
+
+        AddCommand("css_test1", "desc", (player, context) =>
+        {
+            Logger.LogInformation("Player with id {ID} called the css_hello", player?.SteamID);
+        });
     }
 
     public override void Unload(bool hotReload)
